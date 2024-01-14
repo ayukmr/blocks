@@ -414,8 +414,6 @@ impl State {
         // get instances
         let instances = world.instances(camera.pos.x as i32, camera.pos.z as i32);
 
-        log::info!("creating buf @ {:?}", instant::Instant::now());
-
         // create buffer
         let instance_buf = device.create_buffer_init(
             &wgpu::util::BufferInitDescriptor {
@@ -424,8 +422,6 @@ impl State {
                 usage:    wgpu::BufferUsages::VERTEX,
             }
         );
-
-        log::info!("created buf @ {:?}", instant::Instant::now());
 
         (instances, instance_buf)
     }

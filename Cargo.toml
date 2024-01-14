@@ -1,0 +1,39 @@
+[package]
+name = "blocks"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wgpu  = "0.18"
+winit = { version = "0.29", features = ["rwh_05"] }
+
+cgmath = "0.18"
+noise  = "0.8"
+rand   = "0.8"
+
+bytemuck = { version = "1.12", features = ["derive"] }
+image    = { version = "0.24", features = ["png", "jpeg"] }
+instant  = { version = "0.1",  features = ["wasm-bindgen"] }
+
+cfg-if = "1"
+log    = "0.4"
+env_logger = "0.10"
+
+anyhow    = "1.0"
+pollster  = "0.3"
+itertools = "0.12"
+rayon     = "1.8"
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wgpu = { version = "0.18", features = ["webgl"] }
+
+wasm-bindgen         = "0.2"
+wasm-bindgen-futures = "0.4"
+
+web-sys = { version = "0.3", features = ["Document", "Window", "Element"] }
+
+console_log = "1.0"
+console_error_panic_hook = "0.1"

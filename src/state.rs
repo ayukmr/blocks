@@ -135,8 +135,7 @@ impl State {
             config.width,
             config.height,
             cgmath::Deg(45.0).into(),
-            // TODO: remove z_far
-            0.1, 100.0
+            0.1, 100.0,
         );
 
         // create camera
@@ -145,7 +144,7 @@ impl State {
             camera_uniform,
             camera_buf,
             camera_bind_group_layout,
-            camera_bind_group
+            camera_bind_group,
         ) = Self::create_camera(&projection, &device);
 
         // create camera controller

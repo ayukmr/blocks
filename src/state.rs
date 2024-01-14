@@ -152,7 +152,9 @@ impl State {
         let camera_controller = CameraController::new(12.5, 0.5);
 
         // create shader
-        let shader = device.create_shader_module(wgpu::include_wgsl!("shader.wgsl"));
+        let shader = device.create_shader_module(
+            wgpu::include_wgsl!("shaders/shader.wgsl"),
+        );
 
         // create depth texture
         let depth_texture = Texture::create_depth_texture(

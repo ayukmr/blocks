@@ -23,7 +23,7 @@ pub async fn result_runner() -> Result<()> {
             std::panic::set_hook(Box::new(console_error_panic_hook::hook));
 
             console_log::init_with_level(log::Level::Info)
-                .expect("error occured when initializing logger");
+                .expect("error occurred when initializing logger");
         } else {
             env_logger::init();
         }
